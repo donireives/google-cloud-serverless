@@ -4,7 +4,8 @@
   "description": "cloudfunction",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
     "url": "https://github.com/donireives/google-cloud-serverless/issues"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.5",
     "axios": "^1.7.7",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
