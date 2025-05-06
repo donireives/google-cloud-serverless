@@ -6,18 +6,18 @@ class SendMailHandler {
             sgMail.setApiKey(process.env.SENDGRID_API_KEY);
             
             const msg = {
-                to: 'doni4869@gmail.com', // receiver email
-                from: process.env.SENDGRID_EMAIL_SENDER, // sender email
-                subject: 'Test Email dari SendGrid',
-                text: 'Ini adalah email test dari SendGrid',
-                html: '<strong>Ini adalah email test dari SendGrid</strong>',
+                from: process.env.SENDGRID_EMAIL_SENDER,
+                to: process.env.SENDGRID_EMAIL_RECEIVER,
+                subject: 'Test Email from SendGrid',
+                text: 'this is a test email',
+                html: '<strong>this is a test email from sendgrid</strong>',
             };
 
             await sgMail.send(msg);
             
             return res.status(200).json({
                 success: true,
-                message: 'Email berhasil dikirim'
+                message: 'Email successfully sent'
             });
         } catch (error) {
             console.error('Error sending email:', error);
