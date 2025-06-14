@@ -25,6 +25,7 @@ import {
 } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { removeUserData, removeTokens } from '../../utils/storage'
+import NotificationDisplay from '../Notification/NotificationDisplay'
 import './MainLayout.css'
 
 interface MainLayoutProps {
@@ -260,6 +261,9 @@ export default function MainLayout({ children, activePage }: MainLayoutProps) {
 
   return (
     <div className="min-h-screen">
+      {/* Notification Display Component */}
+      <NotificationDisplay />
+      
       {/* Sidebar */}
       <div className={`sidebar bg-white ${collapsed ? 'sidebar-collapsed' : 'sidebar-expanded'}`}>
         {/* Logo Section */}

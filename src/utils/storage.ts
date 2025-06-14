@@ -41,4 +41,17 @@ export const getTokens = (): Tokens => {
 export const removeTokens = (): void => {
     document.cookie = 'accessToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
     document.cookie = 'refreshToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+}
+
+// FCM Token storage functions
+export const saveFCMToken = (token: string) => {
+  localStorage.setItem('fcm_token', token)
+}
+
+export const getFCMToken = (): string | null => {
+  return localStorage.getItem('fcm_token')
+}
+
+export const removeFCMToken = () => {
+  localStorage.removeItem('fcm_token')
 } 
